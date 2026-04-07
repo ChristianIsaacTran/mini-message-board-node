@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Template</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <ul>
+        <% messages.forEach((message) => { %>
+            <li> 
+                <h1><%= message.user%></h1>
+                <h2><%= message.text%></h2>
+                <h5><%= message.added%></h5>
+            </li>
+        <% });%>
+     </ul>
+
+     <a href="/new" class="newMessageLink">Go to new message form</a>
+</body>
+</html>

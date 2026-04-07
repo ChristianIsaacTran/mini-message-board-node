@@ -19,3 +19,24 @@
 - Remember that express is in CommonJS, so instead of ES6 import/export, its module.exports and require().
 
 - import express and EJS into the project and test the router is working by running the server into the index path first before doing anything else.
+
+- When using the view templates, since the relative path is defined with app.set("views", path.join(\_\_dirname, "views));, routers in the routes folder can automatically find the view template when calling res.render(), so no need to include the absolute path in the first parameter of the .render function.
+
+- For the index view, the relative path even nested does not need to be defined because express finds the index.ejs view by default, but a differently named view (like the form.ejs) needs to have a relative path defined because its not one of the default files that express finds.
+
+- Form has two attributes, method which describes the HTTP method used upon submission and action describes where the data is sent to a specific URL path.
+
+- When a post request is created, I can access the contents of the form with the request object and the body attribute. The "name" attribute I give to the inputs inside the form are inside the body object.
+
+        ex:
+
+        if the <input name = "input1"> then the req.body would be:
+
+        req.body.input1, and so on.
+
+- In order to use the req.body method above, I need to define an express app-level-middleware that parses the incoming form request and makes it available to the req.body object with express.urlencoded().
+
+        ex: 
+        <!-- causes app to use express.urlencoded middleware to parse form data. The {extended: true} option just defines what library is used to parse the data -->
+
+        app.use(express.urlencoded({extended: true}));
