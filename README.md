@@ -40,3 +40,5 @@
         <!-- causes app to use express.urlencoded middleware to parse form data. The {extended: true} option just defines what library is used to parse the data -->
 
         app.use(express.urlencoded({extended: true}));
+
+- For the messageDetails.ejs route, I went to the index.ejs view template and added a link that href's to a constructed const variable made in the template that adds query params to the link so that I can access req.query variables to display a different message detail on different messages
