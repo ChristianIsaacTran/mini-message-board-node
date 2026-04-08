@@ -16,6 +16,8 @@
                 <h1><%= message.user%></h1>
                 <h2><%= message.text%></h2>
                 <h5><%= message.added%></h5>
+                <%const link = `/details?user=${message.user}&text=${message.text}&added=${message.added}`%>
+                <a href="<%=link%>">Message Details</a>
             </li>
         <% });%>
      </ul>
@@ -23,3 +25,5 @@
      <a href="/new" class="newMessageLink">Go to new message form</a>
 </body>
 </html>
+
+ 

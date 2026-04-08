@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("node:path");
 const {indexRouter} = require("./routes/indexRouter");
 const newMessageRouter = require("./routes/newMessageRouter");
+const messageDetailsRouter = require("./routes/messageDetails");
+
 
 const app = express();
 
@@ -21,9 +23,10 @@ app.set("views", viewsPath);
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 
+// router path assignment
 app.use("/", indexRouter);
-
 app.use("/new", newMessageRouter);
+app.use("/details", messageDetailsRouter);
 
 const port = 3000;
 
