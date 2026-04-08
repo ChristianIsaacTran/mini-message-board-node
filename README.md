@@ -42,3 +42,15 @@
         app.use(express.urlencoded({extended: true}));
 
 - For the messageDetails.ejs route, I went to the index.ejs view template and added a link that href's to a constructed const variable made in the template that adds query params to the link so that I can access req.query variables to display a different message detail on different messages
+
+## Run project
+
+- In CLI in the same directory as the project, run: 
+
+    node app.js
+
+  or
+
+    node --watch app.js
+
+- Go to localhost:3000 in the browser and the server should route to the correct root path.
