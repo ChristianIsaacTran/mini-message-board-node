@@ -36,7 +36,7 @@
 
 - In order to use the req.body method above, I need to define an express app-level-middleware that parses the incoming form request and makes it available to the req.body object with express.urlencoded().
 
-        ex: 
+        ex:
         <!-- causes app to use express.urlencoded middleware to parse form data. The {extended: true} option just defines what library is used to parse the data -->
 
         app.use(express.urlencoded({extended: true}));
@@ -45,12 +45,12 @@
 
 ## Run project
 
-- In CLI in the same directory as the project, run: 
+- In CLI in the same directory as the project, run:
 
-    node app.js
+  node app.js
 
   or
 
-    node --watch app.js
+  node --watch app.js
 
 - Go to localhost:3000 in the browser and the server should route to the correct root path.
