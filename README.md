@@ -54,3 +54,25 @@
   node --watch app.js
 
 - Go to localhost:3000 in the browser and the server should route to the correct root path.
+
+## Hosting
+
+- My plan is to host this website on Railway.com, which is a hosting website that allows the quick deployment of the backend website.
+
+- The hosting requires a connection to my github account which I gave it.
+
+- https://railway.com/
+
+## Environment variables
+
+- For railway, in order to setup a default port for railway I have to go to the setting of the project and add environment variables.
+
+- As discussed in a previous lesson, environment variables are made to hide sensitive data from the public but also allows the backend to
+  use process.env.VARIABLE to access different variables on different machines.
+
+- Environment variables can be created with a .env, but since environment variables change on each environment, I would have to specifically
+  define them on the hosting website (Railway).
+
+- MAKE SURE NOT TO COMMIT/PUSH THE .env LOCAL FILE TO GITHUB. THAT WOULD DEFEAT THE PURPOSE OF IT BEING HIDDEN. INCLUDE .env or .env\* (all environment files) IN THE .gitignore FILE.
+
+      note: Make sure to make the .gitignore file first before making a .env file, or else the .gitignore will not track and prevent the .env file from getting added to the github repo.
