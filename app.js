@@ -38,7 +38,5 @@ app.listen(port, (err) => {
         console.log("err");
     }
 
-    console.log(`Server is running.);
+    console.log(`Server is running.`);
 });
-
-
