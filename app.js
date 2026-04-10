@@ -28,9 +28,10 @@ app.use("/", indexRouter);
 app.use("/new", newMessageRouter);
 app.use("/details", messageDetailsRouter);
 
-const port = 3000;
+// const port = 3000;
+// added .env check for variable or default port 3000
 
-app.listen(port, (err) => {
+app.listen(process.env.PORT || 3000, (err) => {
     if(err) {
         console.log("err");
     }
