@@ -80,14 +80,39 @@
 ## database addon
 
 - in the "Using postgreSQL" lesson in the odin project, the assignment section says to go back to this project and convert the static
-array of data and convert it into a SQL database with postgreSQL and the hosting website.  (done)
+  array of data and convert it into a SQL database with postgreSQL and the hosting website. (done)
 
-      - Add this SQL functionality to the hosting website (not done)
+        - Add this SQL functionality to the hosting website (done)
 
 - initial table creation and initial message data should be done via a setup script. (done)
 
 - add required environment variables to connect to host database service, but test the database initially with local postgreSQL. (done)
 
-      - Add environment variables to the hosting website (not done) 
+      - Add environment variables to the hosting website (done)
 
 - also add server side validation (expresss-validator) (done)
+
+## note about starting a postgreSQL database on railway (hosting service)
+
+- I ran into a bunch of issues with postgreSQL setting it up with railway.
+
+- My main problem was the environment variables I setup weren't being utilized at all and the culprit was
+  the double quotes I've been using to surround the environment variables. This uses the literal string value of the double
+  quotes, so once I removed all of them around the variables, the program worked.
+
+      - DO NOT DOUBLE QUOTE ENVIRONMENT VARIABLES IN RAILWAY. IT JUST MESSES IT UP, JUST DEFINE ENVIRONMENT VARIABLES
+      IN PLAIN TEXT WITHOUT QUOTES. EX:
+
+      ENV_VAR1 = SOMETHING
+
+      DONT DO:
+
+      ENV_VAR1 = "SOMETHING"  #DO NOT DO THIS <---
+
+- To run the inital database table initialize script, I used the "pre-deploy" command setting under the "deploy" tab in railway's setings. Ran it like a regular node file: node db/setupDB.js
+
+      - reminder that railway automatically sees environment variables in the hosting site itself, so no need to add flag --env-file to the command line. Also railway sees the package.json's dependencies so it will automatically install packages as needed.
+
+- I added extra logic for .env file distinction for the database connection url. When using postgreSQL with railway, railway automatically creates a connection URL for me in the form of an environment variable inside postgreSQL itself. I can use the pre-defined URL (which I did for this project) OR I could manually reconstruct the URL in string (I only did this for development mode). I also added an if statement to check if the environment is currently in development (DEV) or production (PROD) which will change the connection URL used in the app.
+
+- Confirmed that the database and the message board app are working correctly in railway hosting. Will try to add an extra route to delete messages from the message board and in the database.
