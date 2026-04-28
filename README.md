@@ -90,4 +90,4 @@ array of data and convert it into a SQL database with postgreSQL and the hosting
 
       - Add environment variables to the hosting website (not done) 
 
-- also add server side validation (expresss-validator) (not done)
+- also add server side validation (expresss-validator) (done)
