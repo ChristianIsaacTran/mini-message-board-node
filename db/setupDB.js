@@ -36,7 +36,7 @@ const SQLQuery = `
 
 const postGreConStringDev = `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
 
-const postGrenConStringProd = process.env.DATABASE_URL;
+const postGreConStringProd = process.env.DATABASE_URL;
 
 async function main() {
   console.log("seeding messages table...");
@@ -50,8 +50,6 @@ async function main() {
   } else {
     console.log("CODE_MODE environment var not found.")
   }
-
-  console.log(currentConString);
 
   const clientCon = new Client({
     connectionString: currentConString,
