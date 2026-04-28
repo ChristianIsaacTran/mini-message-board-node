@@ -14,6 +14,8 @@ if (process.env.CODE_MODE === "PROD") {
   console.log("CODE_MODE environment var not found.");
 }
 
+console.log(currentConString);
+
 // export a new pool object to use to query DB
 module.exports = new Pool({
   // connection options
