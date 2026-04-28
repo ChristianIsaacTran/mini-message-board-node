@@ -6,6 +6,9 @@ messages array contains messages objects that have:
 - user: The author of the message
 - added: The date the message was added, calculated with new Date()
 
+
+UPDATE: 
+- re-implement this, but as an SQL database with railway hosting service and postgreSQL
 */
 
 const messages = [

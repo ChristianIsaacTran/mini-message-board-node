@@ -76,3 +76,14 @@
 - MAKE SURE NOT TO COMMIT/PUSH THE .env LOCAL FILE TO GITHUB. THAT WOULD DEFEAT THE PURPOSE OF IT BEING HIDDEN. INCLUDE .env or .env\* (all environment files) IN THE .gitignore FILE.
 
       note: Make sure to make the .gitignore file first before making a .env file, or else the .gitignore will not track and prevent the .env file from getting added to the github repo.
+
+## database addon
+
+- in the "Using postgreSQL" lesson in the odin project, the assignment section says to go back to this project and convert the static
+array of data and convert it into a SQL database with postgreSQL and the hosting website.
+
+- initial table creation and initial message data should be done via a setupn script.
+
+- add required environment variables to connect to host database service, but test the database initially with local postgreSQL.
+
+- also add server side validation (expresss-validator)
