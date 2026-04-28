@@ -38,5 +38,7 @@ app.listen(port, (err) => {
         console.log("err");
     }
 
+    console.log(new Date().toLocaleString());
+
     console.log(`Server is running.`);
 });

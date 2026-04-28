@@ -20,17 +20,17 @@ const SQLQuery = `
     (
         'Martin', 
         'THE UNIVERSE!',
-        '${new Date().toISOString()}'
+        '${new Date().toLocaleString()}'
     ),
     (
         'Luke', 
         'YOU BLEW IT!', 
-        '${new Date().toISOString()}'
+        '${new Date().toLocaleString()}'
     ),
     (
         'Will', 
         'THAT''S CRAZY!', 
-        '${new Date().toISOString()}'
+        '${new Date().toLocaleString()}'
     );
 `;
 

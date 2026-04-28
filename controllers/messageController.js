@@ -30,4 +30,25 @@ exports.renderNewMessageForm = (req, res) => {
 };
 
 // /new route, post the new message form results to the database and redirec user to root to see
-exports.postMessageForm = async (req, res) => {};
+exports.postMessageForm = async (req, res) => {
+
+    // add form submission to database
+    // messages.push(
+    //     {
+    //         text: req.body.message, user: req.body.author, added: new Date(),
+    //     }
+    // );
+
+    // add form submission to the postgreSQL database
+    const formInfo = {
+        username: req.body.author,
+        text: req.body.message,
+        date_added: new Date().toLocaleString(),
+    };
+
+    await db.addNewMessage(formInfo);
+
+    // send users back to the index route
+    res.redirect("/");
+
+};

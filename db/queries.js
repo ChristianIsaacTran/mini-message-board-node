@@ -7,4 +7,10 @@ async function getAllMessages() {
   return rows;
 }
 
-module.exports = { getAllMessages };
+async function addNewMessage({username, text, date_added}) {
+    await pool.query("INSERT INTO messages(username, text, date_added) VALUES($1, $2, $3)", [username, text, date_added]);
+
+    return console.log("Added message to database successful");
+}
+
+module.exports = { getAllMessages, addNewMessage };
