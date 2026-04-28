@@ -80,10 +80,14 @@
 ## database addon
 
 - in the "Using postgreSQL" lesson in the odin project, the assignment section says to go back to this project and convert the static
-array of data and convert it into a SQL database with postgreSQL and the hosting website.
+array of data and convert it into a SQL database with postgreSQL and the hosting website.  (done)
 
-- initial table creation and initial message data should be done via a setupn script.
+      - Add this SQL functionality to the hosting website (not done)
 
-- add required environment variables to connect to host database service, but test the database initially with local postgreSQL.
+- initial table creation and initial message data should be done via a setup script. (done)
 
-- also add server side validation (expresss-validator)
+- add required environment variables to connect to host database service, but test the database initially with local postgreSQL. (done)
+
+      - Add environment variables to the hosting website (not done) 
+
+- also add server side validation (expresss-validator) (not done)
