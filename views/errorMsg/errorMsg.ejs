@@ -1,0 +1,11 @@
+
+ <% if(locals.errorDetected) {%>
+<div>
+<h3>Form error:</h3>
+  <ul>
+    <% locals.errorsArr.forEach((error) => {   %> 
+        <li> <%= error.msg %> </li> 
+    <% }); %>
+  </ul>
+</div>
+<%}%>
