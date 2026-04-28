@@ -51,6 +51,8 @@ async function main() {
     console.log("CODE_MODE environment var not found.")
   }
 
+  console.log(currentConString);
+
   const clientCon = new Client({
     connectionString: currentConString,
   });
