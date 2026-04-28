@@ -16,7 +16,7 @@
                 <h1><%= message.username%></h1>
                 <h2><%= message.text%></h2>
                 <h5><%= message.date_added%></h5>
-                <%const link = `/details?user=${message.user}&text=${message.text}&added=${message.added}`%>
+                <%const link = `/details?user=${message.username}&text=${message.text}&added=${message.date_added}`%>
                 <a href="<%=link%>">Message Details</a>
             </li>
         <% });%>

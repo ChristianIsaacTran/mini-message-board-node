@@ -8,8 +8,12 @@ exports.renderAllMessages = async (req, res) => {
 };
 
 // /details route, display full message from query params
-exports.renderMessageDetails = async (req, res) => {
+exports.renderMessageDetails = (req, res) => {
+    const user = req.query.user;
+    const text = req.query.text;
+    const added = req.query.added;
 
+    res.render("./messageDetails/messageDetails", {user: user, text: text, added: added});
 };
 
 // /new route, display new message form to user
