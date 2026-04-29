@@ -70,6 +70,7 @@ async function main() {
     console.log("Seeding done.");
   } else {
     console.log("Data detected in table. Skipping seeding ")
+    await clientCon.end();
   }
 }
 
