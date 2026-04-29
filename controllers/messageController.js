@@ -82,3 +82,15 @@ exports.postMessageForm = [ validationChain, async (req, res) => {
     res.redirect("/");
 
 }];
+
+// /delete route, gets message from query params and deletes it from the database, then redirects back to root to re-render index.ejs
+exports.getDelete = async (req, res) => {
+
+    const username = req.query.user;
+    const text = req.query.text; 
+    const date_added = req.query.added;
+    await db.removeMessage({username, text, date_added});
+
+    // redirect back to root 
+    res.redirect("/");
+};

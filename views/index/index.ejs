@@ -18,6 +18,8 @@
                 <h5><%= new Date(message.date_added).toLocaleString() %></h5>
                 <%const link = `/details?user=${message.username}&text=${message.text}&added=${new Date(message.date_added).toLocaleString()}`%>
                 <a href="<%=link%>">Message Details</a>
+                <%const delLink = `/delete?user=${message.username}&text=${message.text}&added=${new Date(message.date_added).toLocaleString()}`%>
+                <a href="<%=delLink%>" onClick="return confirm('Are you sure? This will delete the message from the database as well.')">Delete Message</a>
             </li>
         <% });%>
      </ul>

@@ -24,4 +24,4 @@ const indexRouter = Router();
 
 indexRouter.get("/", messageController.renderAllMessages);
 
-module.exports = {indexRouter};
+module.exports = indexRouter;

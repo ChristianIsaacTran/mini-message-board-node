@@ -1,9 +1,9 @@
 const express = require("express");
 const path = require("node:path");
-const {indexRouter} = require("./routes/indexRouter");
+const indexRouter = require("./routes/indexRouter");
 const newMessageRouter = require("./routes/newMessageRouter");
 const messageDetailsRouter = require("./routes/messageDetailsRouter");
-
+const deleteRouter = require("./routes/deleteRouter");
 
 const app = express();
 
@@ -27,6 +27,7 @@ app.use(express.static(assetsPath));
 app.use("/", indexRouter);
 app.use("/new", newMessageRouter);
 app.use("/details", messageDetailsRouter);
+app.use("/delete", deleteRouter);
 
 
 // added .env check for variable or default port 3000
