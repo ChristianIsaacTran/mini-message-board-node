@@ -109,6 +109,8 @@
 
       ENV_VAR1 = "SOMETHING"  #DO NOT DO THIS <---
 
+      - When using hosting services, I shouldn't use double quotes during environment variable creation.
+
 - To run the inital database table initialize script, I used the "pre-deploy" command setting under the "deploy" tab in railway's setings. Ran it like a regular node file: node db/setupDB.js
 
       - reminder that railway automatically sees environment variables in the hosting site itself, so no need to add flag --env-file to the command line. Also railway sees the package.json's dependencies so it will automatically install packages as needed.

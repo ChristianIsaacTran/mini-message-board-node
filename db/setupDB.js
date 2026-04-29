@@ -48,7 +48,7 @@ async function main() {
   } else if (process.env.CODE_MODE === "DEV") {
     currentConString = postGreConStringDev;
   } else {
-    console.log("CODE_MODE environment var not found.")
+    console.log("CODE_MODE environment var not found.");
   }
 
   const clientCon = new Client({
@@ -56,10 +56,21 @@ async function main() {
   });
 
   await clientCon.connect();
-  await clientCon.query(SQLQuery);
-  await clientCon.end();
 
-  console.log("database done");
+  //   check if any values are in the database table. If there are, skip seeding. If not, proceed with data seeding.
+  const SQLExists = `
+    SELECT * FROM messages;
+  `;
+
+  const { rows } = await clientCon.query(SQLExists);
+
+  if (rows.length === 0) {
+    await clientCon.query(SQLQuery);
+    await clientCon.end();
+    console.log("Seeding done.");
+  } else {
+    console.log("Data detected in table. Skipping seeding ")
+  }
 }
 
 main();
